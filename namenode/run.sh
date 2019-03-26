@@ -13,7 +13,16 @@ fi
 
 if [ "`ls -A $namedir`" == "" ]; then
   echo "Formatting namenode name directory: $namedir"
-  $HADOOP_PREFIX/bin/hdfs --config $HADOOP_CONF_DIR namenode -format $CLUSTER_NAME 
+  $HADOOP_PREFIX/bin/hdfs --config $HADOOP_CONF_DIR namenode -format $CLUSTER_NAME &
+#  sleep 1m
+  $HADOOP_PREFIX/bin/hdfs --config $HADOOP_CONF_DIR datanode -format $CLUSTER_NAME
 fi
 
-$HADOOP_PREFIX/bin/hdfs --config $HADOOP_CONF_DIR namenode
+
+echo "Llegamos hasta antes de la ejecuciond e las lineas"
+$HADOOP_PREFIX/bin/hdfs --config $HADOOP_CONF_DIR namenode &
+
+#sleep 1m
+#echo "enmedio"
+$HADOOP_PREFIX/bin/hdfs --config $HADOOP_CONF_DIR datanode
+
