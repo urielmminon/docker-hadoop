@@ -23,4 +23,6 @@ $HADOOP_PREFIX/bin/hdfs --config $HADOOP_CONF_DIR namenode &
 $HADOOP_PREFIX/bin/hdfs --config $HADOOP_CONF_DIR datanode
 
 chmod 777 /home/jovyan
+chmod 777 /hadoop/dfs/name
 $HADOOP_PREFIX/bin/hdfs dfs -chmod * /*
+
