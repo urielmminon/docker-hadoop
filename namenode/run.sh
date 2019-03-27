@@ -18,11 +18,9 @@ if [ "`ls -A $namedir`" == "" ]; then
   $HADOOP_PREFIX/bin/hdfs --config $HADOOP_CONF_DIR datanode -format $CLUSTER_NAME
 fi
 
-
 echo "Llegamos hasta antes de la ejecuciond e las lineas"
 $HADOOP_PREFIX/bin/hdfs --config $HADOOP_CONF_DIR namenode &
-
-#sleep 1m
-#echo "enmedio"
 $HADOOP_PREFIX/bin/hdfs --config $HADOOP_CONF_DIR datanode
 
+chmod 777 /home/jovyan
+$HADOOP_PREFIX/bin/hdfs dfs -chmod * /*

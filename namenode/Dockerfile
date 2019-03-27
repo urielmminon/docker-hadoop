@@ -13,5 +13,3 @@ RUN chmod a+x /run.sh
 EXPOSE 50070
 
 CMD ["/run.sh"]
-
-#ENTRYPOINT sleep 1m && $HADOOP_PREFIX/bin/hdfs --config $HADOOP_CONF_DIR datanode && tail -f /dev/null
